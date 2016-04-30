@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="AlbanianHeartFeeder.ItemDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AlbanianHeartFeeder"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="layoutRoot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid x:Name="detailGrid" Margin="20" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"  />
+                <RowDefinition Height="*"  />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="340*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="633"  />
+                    <ColumnDefinition Width="*"  />
+                </Grid.ColumnDefinitions>
+
+                <Image x:Name="picture"  Height="347" Width="633" HorizontalAlignment="Left"
+                       Source="{Binding ImageLink}" Grid.Column="0"
+                       Stretch="UniformToFill" VerticalAlignment="Top" />
+                <StackPanel x:Name="title_DescriptionStackPanel" Orientation="Vertical"
+                            Grid.Column="1"  Margin="8,0,4,0" MaxHeight="347"  >
+                    <TextBlock x:Name="title" Text="{Binding Title}" 
+                               TextWrapping="WrapWholeWords" Margin="0,0,0,4"
+                               TextTrimming="CharacterEllipsis" FontWeight="Bold"  />
+                    <TextBlock x:Name="description" Text="{Binding Description}"
+                              TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1"  >
+                <TextBlock x:Name="fullDescription" Margin="0,8,4,4"
+                               TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis"  />
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+</Page>
